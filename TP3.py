@@ -1,7 +1,9 @@
 """
 Nom = Micah
 Gr = 406
-Ce code cree une scenario ou le jouer doit combattre des monstres
+Ce code cree une scenario ou le jouer doit combattre des monstres une apres l'autre,
+et  chaque 3 victoires, un boss de haut difficulte apparaitre,
+le but du jeu est dele de survie le plus longtemps possible
 """
 import random
 jeu = True
@@ -26,11 +28,16 @@ while jeu:
     if not showed_rules:
         if boss_appear % 3 == 0 and boss_appear != 0:
             force_ennemi = force_pers(7, 12)
-            dice_throw = force_pers(1, 12)
             print(f"Vous tombez face à face avec un boss de haut difficulté : {force_ennemi}")
         else:
             force_ennemi = force_pers(1, 5)
             print(f"Vous tombez face à face avec un adversaire de difficulté : {force_ennemi}")
+    else:
+        if boss_appear % 3 == 0 and boss_appear != 0:
+            print(f"Vous tombez face à face avec un boss de haut difficulté: {force_ennemi}")
+        else:
+            print(f"Vous tombez face à face avec un adversaire de difficulté : {force_ennemi}")
+    showed_rules = False
 
     rep = int(input("""Que voulez-vous faire ?
     1- Combattre cet adversaire
@@ -39,8 +46,11 @@ while jeu:
     4- Quitter la partie
     """))
     if rep == 1:
+        if boss_appear % 3 == 0 and boss_appear != 0:
+            dice_throw = force_pers(1, 12)
+        else:
+            dice_throw = force_pers(1, 6)
         numero_combat += 1
-        dice_throw = force_pers(1, 6)
         print(f"""Combat {numero_combat}: nombre de victores:{nombre_victoires} vs nombres de defaites:{nombre_defaites}
 Niveau de vie de l’usager: {nbr_vie}
 Force de l’adversaire: {force_ennemi}""")
@@ -67,8 +77,8 @@ Force de l’adversaire: {force_ennemi}""")
 
     elif rep == 2:
         if boss_appear % 3 == 0 and boss_appear != 0:
-            nbr_vie -= 8
-            print(f"""Il y a une pénalité de 8 point de vie. 
+            nbr_vie -= 7
+            print(f"""Il y a une pénalité de 7 point de vie. 
 Niveau de vie = {nbr_vie}""")
             boss_appear = 0
         else:
@@ -88,7 +98,7 @@ Niveau de vie = {nbr_vie}""")
         La partie se termine lorsque les points de vie de l’usager tombent sous 0.
 
         L’usager peut combattre ou éviter chaque adversaire, dans le cas de l’évitement, 
-        il y a une pénalité de 1 point de vie. Si l'usager evite un boss, il y a une penalite de 5 point de vie
+        il y a une pénalité de 1 point de vie. Si l'usager evite un boss, il y a une penalite de 7 point de vie
         
         """)
 
@@ -103,6 +113,8 @@ Niveau de vie = {nbr_vie}""")
         reply = str(input("voulez-vous redémarrer? (y/n)"))
         if reply == "y":
             nbr_vie = 20
+            nombre_defaites = 0
+            nombre_victoires = 0
             numero_combat = 0
             print("vous avez redémarré avec 20 points de vie")
             print(f"Derniere combat = {combat_statut}")
