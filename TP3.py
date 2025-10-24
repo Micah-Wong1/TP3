@@ -6,8 +6,8 @@ et  chaque 3 victoires, un boss de haut difficulte apparaitre,
 le but du jeu est dele de survie le plus longtemps possible avec 30 HP au depart
 """
 import random
-jeu = True
 
+jeu = True
 dice_throw = 0
 second_throw = 0
 force_ennemi = 0
@@ -22,8 +22,7 @@ showed_rules = False
 
 
 def force_pers(low, high):
-    force = random.randint(low, high)
-    return force
+    return random.randint(low, high)
 
 
 while jeu:
@@ -55,12 +54,12 @@ while jeu:
             dice_throw = force_pers(1, 6)
             second_throw = force_pers(1, 6)
         numero_combat += 1
-        print(f"""Combat {numero_combat}: nombre de victores:{nombre_victoires} vs nombres de defaites:{nombre_defaites}
-Niveau de vie de l’usager: {nbr_vie}
-Force de l’adversaire: {force_ennemi}""")
-        print(f"""Lancer du dé : {dice_throw} 
-Lancer du deuxieme dé : {second_throw}
-Force total du jouer : {dice_throw + second_throw}""")
+        print(f"Combat {numero_combat}: nombre de victores:{nombre_victoires} vs nombres de defaites:{nombre_defaites}")
+        print(f"Niveau de vie de l’usager: {nbr_vie}")
+        print(f"Force de l’adversaire: {force_ennemi}")
+        print(f"Lancer du dé : {dice_throw}")
+        print(f"Lancer du deuxieme dé : {second_throw}")
+        print(f"Force total du jouer : {dice_throw + second_throw}")
         if dice_throw + second_throw <= force_ennemi:
             if boss_appear % 3 == 0 and boss_appear != 0:
                 boss_appear = 0
@@ -84,13 +83,11 @@ Force total du jouer : {dice_throw + second_throw}""")
     elif rep == 2:
         if boss_appear % 3 == 0 and boss_appear != 0:
             nbr_vie -= 7
-            print(f"""Il y a une pénalité de 7 point de vie. 
-Niveau de vie = {nbr_vie}""")
+            print(f"Il y a une pénalité de 7 point de vie. Niveau de vie = {nbr_vie}")
             boss_appear = 0
         else:
             nbr_vie -= 2
-            print(f"""Il y a une pénalité de 2 point de vie. 
-Niveau de vie = {nbr_vie}""")
+            print(f"Il y a une pénalité de 2 point de vie. Niveau de vie = {nbr_vie}")
 
     elif rep == 3:
         showed_rules = True
