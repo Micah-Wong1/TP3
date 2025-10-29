@@ -38,8 +38,8 @@ while jeu:
             print(f"Vous tombez face à face avec un boss de haut difficulté: {force_ennemi}")
         else:
             print(f"Vous tombez face à face avec un adversaire de difficulté : {force_ennemi}")
-    showed_rules = False
 
+    showed_rules = False
     rep = int(input("""Que voulez-vous faire ?
     1- Combattre cet adversaire
     2- Contourner cet adversaire et aller ouvrir une autre porte
