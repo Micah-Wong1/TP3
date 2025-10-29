@@ -105,7 +105,7 @@ while jeu:
         
         """)
 
-    elif rep == 4:
+    else:
         print("Merci et au revoir...")
         jeu = False
 
