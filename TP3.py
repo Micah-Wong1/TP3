@@ -122,6 +122,6 @@ while jeu:
             print("vous avez redémarré avec 30 points de vie")
             print(f"Derniere combat = {combat_statut}")
             print(f"Niveau de vie = {nbr_vie}")
-        elif reply == "n":
+        else:
             print("Merci et au revoir...")
             jeu = False
