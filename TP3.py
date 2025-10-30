@@ -28,7 +28,7 @@ def force_pers(low, high):
 while jeu:
     if not showed_rules:
         if boss_appear % 3 == 0 and boss_appear != 0:
-            force_ennemi = force_pers(9, 24)
+            force_ennemi = force_pers(9, 23)
             print(f"Vous tombez face à face avec un boss de haut difficulté : {force_ennemi}")
         else:
             force_ennemi = force_pers(2, 11)
