@@ -67,8 +67,6 @@ while jeu:
             nbr_vie -= force_ennemi
             combat_statut = "defaite"
             nbr_victoire_consecutive = 0
-            print(f"Derniere combat = {combat_statut}")
-            print(f"Niveau de vie = {nbr_vie}")
 
         elif dice_throw + second_throw > force_ennemi:
             boss_appear += 1
@@ -76,9 +74,9 @@ while jeu:
             nbr_vie += force_ennemi
             combat_statut = "victoire"
             nbr_victoire_consecutive += 1
-            print(f"Derniere combat = {combat_statut}")
-            print(f"Niveau de vie = {nbr_vie}")
-            print(f"Nombre de victoires consécutives : {nbr_victoire_consecutive}")
+        print(f"Nombre de victoires consécutives : {nbr_victoire_consecutive}")
+        print(f"Derniere combat = {combat_statut}")
+        print(f"Niveau de vie = {nbr_vie}")
 
     elif rep == 2:
         if boss_appear % 3 == 0 and boss_appear != 0:
