@@ -54,12 +54,10 @@ while jeu:
             dice_throw = force_pers(1, 6)
             second_throw = force_pers(1, 6)
         numero_combat += 1
-        print(f"Combat {numero_combat}: nombre de victores:{nombre_victoires} vs nombres de defaites:{nombre_defaites}")
-        print(f"Niveau de vie de l’usager: {nbr_vie}")
-        print(f"Force de l’adversaire: {force_ennemi}")
         print(f"Lancer du dé : {dice_throw}")
         print(f"Lancer du deuxieme dé : {second_throw}")
         print(f"Force total du jouer : {dice_throw + second_throw}")
+        print(f"Force de l’adversaire: {force_ennemi}")
         if dice_throw + second_throw <= force_ennemi:
             if boss_appear % 3 == 0 and boss_appear != 0:
                 boss_appear = 0
@@ -74,8 +72,9 @@ while jeu:
             nbr_vie += force_ennemi
             combat_statut = "victoire"
             nbr_victoire_consecutive += 1
-        print(f"Nombre de victoires consécutives : {nbr_victoire_consecutive}")
         print(f"Derniere combat = {combat_statut}")
+        print(f"Nombre de victoires consécutives : {nbr_victoire_consecutive}")
+        print(f"Combat {numero_combat}: nombre de victores:{nombre_victoires} vs nombres de defaites:{nombre_defaites}")
         print(f"Niveau de vie = {nbr_vie}")
 
     elif rep == 2:
